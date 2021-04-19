@@ -30,10 +30,15 @@ def backside():
 
 
 
-#saves the learned words
+#saves the learned words to csv file 
 def learned():
     global learned_words, word
     learned_words.append(word)
+    data = pd.DataFrame(learned_words)
+    data.to_csv("learned_words", index=0)
+
+
+    print(data)
     frontside()
 
 
